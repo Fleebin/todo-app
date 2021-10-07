@@ -21,11 +21,16 @@ export const TodoList = () => {
 
         setTodos(removeArr)
     }
-
+    console.log(todos)
     return (
         <div className="boxList">
             <TodoForm onSubmit={addTodo} />
             <Todo todos={todos} removeTodo={removeTodo} />
+            {todos.length <= 0 &&
+                <div className="listNa">
+                    <p>Nenhum item cadastrado</p>
+                </div>
+            }
         </div>
     )
 }
